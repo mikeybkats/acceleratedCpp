@@ -1,3 +1,20 @@
+## General
+
+Q: _What does this enum result in when printed to the console?_
+
+```
+enum Example {
+    FOO,
+    BAR,
+    BASH
+}
+
+printf("%i\n", FOO);
+printf("%i\n", BAR);
+```
+
+A: `0`, `1`
+
 ## Chapter 0
 
 ## Chapter 1
@@ -29,3 +46,5 @@ A: If a value greater than the integer is subtracted from the value it will stil
 
 Q: _What happens to a local variable if it's defined without an initializer?_
 A: Local variables have a default initializer that sets the value to undefined.
+
+## Chapter

@@ -37,5 +37,6 @@
     "iostream": "cpp"
   },
   "editor.formatOnSave": true,
-  "C_Cpp.default.compilerPath": "/usr/bin/clang++"
+  "C_Cpp.default.compilerPath": "/usr/bin/clang++",
+  "C_Cpp.default.compileCommands": "${workspaceFolder}/compile_commands.json"
 }
