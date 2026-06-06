@@ -7,7 +7,7 @@ SRC_DIR=src
 OBJ_DIR=build
 BIN_DIR=$(OBJ_DIR)/bin
 
-SRC_FILES=$(wildcard $(SRC_DIR)/*.cpp)
+SRC_FILES=$(filter-out %_assignment.cpp,$(wildcard $(SRC_DIR)/*.cpp))
 EXE_FILES=$(patsubst $(SRC_DIR)/%.cpp,$(BIN_DIR)/%,$(SRC_FILES))
 
 # Ensure the output directories exist
