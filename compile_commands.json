@@ -11,6 +11,11 @@
   },
   {
     "directory": "/Users/michaelbarakat/projects/acceleratedC++",
+    "command": "clang++ -std=c++17 -Wall -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -D_THREAD_SAFE -c src/ch_01_exercies.cpp",
+    "file": "src/ch_01_exercies.cpp"
+  },
+  {
+    "directory": "/Users/michaelbarakat/projects/acceleratedC++",
     "command": "clang++ -std=c++17 -Wall -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -D_THREAD_SAFE -c src/ch_01_framing_a_name.cpp",
     "file": "src/ch_01_framing_a_name.cpp"
   },
