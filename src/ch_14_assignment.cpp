@@ -40,3 +40,5 @@
 //   make build/bin/ch_14_assignment
 //   ./build/bin/ch_14_assignment
 // =============================================================================
+
+int main() { return 0; }

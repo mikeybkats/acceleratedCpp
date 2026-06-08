@@ -45,3 +45,5 @@
 //   make build/bin/ch_16_assignment
 //   ./build/bin/ch_16_assignment grades.txt
 // =============================================================================
+
+int main() { return 0; }

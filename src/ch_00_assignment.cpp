@@ -28,5 +28,6 @@
 // - Build:  make build/bin/ch_00_assignment   (after adding your code below)
 // - Run:    ./build/bin/ch_00_assignment
 //
-// NOTE: This file is excluded from automatic builds until you add your code.
 // =============================================================================
+
+int main() { return 0; }

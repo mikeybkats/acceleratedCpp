@@ -87,6 +87,9 @@ int main() {
   std::cout << "Hello, " << name << "; nice to meet you too!" << std::endl;
 
   // i ran the program, i'm shocked that this actually worked.
+  // the reason it worked is because `<<` always returns the stream regardless
+  // of what the right-hand operand is. so std::endl << "And what is yours?";
+  // will still return std::cout
 
   return 0;
 }

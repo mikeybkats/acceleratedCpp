@@ -1,6 +1,11 @@
 [
   {
     "directory": "/Users/michaelbarakat/projects/acceleratedC++",
+    "command": "clang++ -std=c++17 -Wall -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -D_THREAD_SAFE -c src/ch_00_assignment.cpp",
+    "file": "src/ch_00_assignment.cpp"
+  },
+  {
+    "directory": "/Users/michaelbarakat/projects/acceleratedC++",
     "command": "clang++ -std=c++17 -Wall -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -D_THREAD_SAFE -c src/ch_00_hello_world.cpp",
     "file": "src/ch_00_hello_world.cpp"
   },
@@ -8,6 +13,11 @@
     "directory": "/Users/michaelbarakat/projects/acceleratedC++",
     "command": "clang++ -std=c++17 -Wall -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -D_THREAD_SAFE -c src/ch_00_sdl2_hello.cpp",
     "file": "src/ch_00_sdl2_hello.cpp"
+  },
+  {
+    "directory": "/Users/michaelbarakat/projects/acceleratedC++",
+    "command": "clang++ -std=c++17 -Wall -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -D_THREAD_SAFE -c src/ch_01_assignment.cpp",
+    "file": "src/ch_01_assignment.cpp"
   },
   {
     "directory": "/Users/michaelbarakat/projects/acceleratedC++",
@@ -56,6 +66,11 @@
   },
   {
     "directory": "/Users/michaelbarakat/projects/acceleratedC++",
+    "command": "clang++ -std=c++17 -Wall -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -D_THREAD_SAFE -c src/ch_02_assignment.cpp",
+    "file": "src/ch_02_assignment.cpp"
+  },
+  {
+    "directory": "/Users/michaelbarakat/projects/acceleratedC++",
     "command": "clang++ -std=c++17 -Wall -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -D_THREAD_SAFE -c src/ch_02_sdl2_images.cpp",
     "file": "src/ch_02_sdl2_images.cpp"
   },
@@ -66,7 +81,77 @@
   },
   {
     "directory": "/Users/michaelbarakat/projects/acceleratedC++",
+    "command": "clang++ -std=c++17 -Wall -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -D_THREAD_SAFE -c src/ch_03_assignment.cpp",
+    "file": "src/ch_03_assignment.cpp"
+  },
+  {
+    "directory": "/Users/michaelbarakat/projects/acceleratedC++",
     "command": "clang++ -std=c++17 -Wall -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -D_THREAD_SAFE -c src/ch_03_sdl2_key_presses.cpp",
     "file": "src/ch_03_sdl2_key_presses.cpp"
+  },
+  {
+    "directory": "/Users/michaelbarakat/projects/acceleratedC++",
+    "command": "clang++ -std=c++17 -Wall -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -D_THREAD_SAFE -c src/ch_04_assignment.cpp",
+    "file": "src/ch_04_assignment.cpp"
+  },
+  {
+    "directory": "/Users/michaelbarakat/projects/acceleratedC++",
+    "command": "clang++ -std=c++17 -Wall -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -D_THREAD_SAFE -c src/ch_05_assignment.cpp",
+    "file": "src/ch_05_assignment.cpp"
+  },
+  {
+    "directory": "/Users/michaelbarakat/projects/acceleratedC++",
+    "command": "clang++ -std=c++17 -Wall -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -D_THREAD_SAFE -c src/ch_06_assignment.cpp",
+    "file": "src/ch_06_assignment.cpp"
+  },
+  {
+    "directory": "/Users/michaelbarakat/projects/acceleratedC++",
+    "command": "clang++ -std=c++17 -Wall -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -D_THREAD_SAFE -c src/ch_07_assignment.cpp",
+    "file": "src/ch_07_assignment.cpp"
+  },
+  {
+    "directory": "/Users/michaelbarakat/projects/acceleratedC++",
+    "command": "clang++ -std=c++17 -Wall -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -D_THREAD_SAFE -c src/ch_08_assignment.cpp",
+    "file": "src/ch_08_assignment.cpp"
+  },
+  {
+    "directory": "/Users/michaelbarakat/projects/acceleratedC++",
+    "command": "clang++ -std=c++17 -Wall -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -D_THREAD_SAFE -c src/ch_09_assignment.cpp",
+    "file": "src/ch_09_assignment.cpp"
+  },
+  {
+    "directory": "/Users/michaelbarakat/projects/acceleratedC++",
+    "command": "clang++ -std=c++17 -Wall -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -D_THREAD_SAFE -c src/ch_10_assignment.cpp",
+    "file": "src/ch_10_assignment.cpp"
+  },
+  {
+    "directory": "/Users/michaelbarakat/projects/acceleratedC++",
+    "command": "clang++ -std=c++17 -Wall -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -D_THREAD_SAFE -c src/ch_11_assignment.cpp",
+    "file": "src/ch_11_assignment.cpp"
+  },
+  {
+    "directory": "/Users/michaelbarakat/projects/acceleratedC++",
+    "command": "clang++ -std=c++17 -Wall -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -D_THREAD_SAFE -c src/ch_12_assignment.cpp",
+    "file": "src/ch_12_assignment.cpp"
+  },
+  {
+    "directory": "/Users/michaelbarakat/projects/acceleratedC++",
+    "command": "clang++ -std=c++17 -Wall -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -D_THREAD_SAFE -c src/ch_13_assignment.cpp",
+    "file": "src/ch_13_assignment.cpp"
+  },
+  {
+    "directory": "/Users/michaelbarakat/projects/acceleratedC++",
+    "command": "clang++ -std=c++17 -Wall -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -D_THREAD_SAFE -c src/ch_14_assignment.cpp",
+    "file": "src/ch_14_assignment.cpp"
+  },
+  {
+    "directory": "/Users/michaelbarakat/projects/acceleratedC++",
+    "command": "clang++ -std=c++17 -Wall -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -D_THREAD_SAFE -c src/ch_15_assignment.cpp",
+    "file": "src/ch_15_assignment.cpp"
+  },
+  {
+    "directory": "/Users/michaelbarakat/projects/acceleratedC++",
+    "command": "clang++ -std=c++17 -Wall -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -D_THREAD_SAFE -c src/ch_16_assignment.cpp",
+    "file": "src/ch_16_assignment.cpp"
   }
 ]

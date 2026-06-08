@@ -37,3 +37,37 @@
 //   make build/bin/ch_01_assignment
 //   ./build/bin/ch_01_assignment
 // =============================================================================
+
+#include <iostream>
+#include <ostream>
+#include <string>
+
+int main() {
+  std::cout << "Name?" << std::endl;
+  std::string name;
+  std::cin >> name;
+
+  std::cout << "Favorite Programming language?" << std::endl;
+  std::string language;
+  std::cin >> language;
+
+  std::cout << "Favorite hobby (one word)?" << std::endl;
+  std::string hobby;
+  std::cin >> hobby;
+
+  std::string greeting =
+      "Hello " + name + "! You like " + language + " and " + hobby + ".";
+  int length = greeting.length() + 2;
+
+  std::string first(length + 2, '*');
+  std::string second(length, ' ');
+  std::string middle = "* " + greeting + " *";
+
+  std::cout << first << std::endl;
+  std::cout << "*" + second + "*" << std::endl;
+  std::cout << middle << std::endl;
+  std::cout << "*" + second + "*" << std::endl;
+  std::cout << first << std::endl;
+
+  return 0;
+}

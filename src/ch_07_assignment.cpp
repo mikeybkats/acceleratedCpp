@@ -36,3 +36,5 @@
 //
 // TIP: Test with a short poem or paragraph pasted into the terminal.
 // =============================================================================
+
+int main() { return 0; }
