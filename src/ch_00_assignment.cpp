@@ -4,8 +4,8 @@
 // =============================================================================
 //
 // GOAL
-// Write a short program that introduces you to the basic shape of a C++ program:
-// comments, #include, main(), curly braces, std::cout, and return.
+// Write a short program that introduces you to the basic shape of a C++
+// program: comments, #include, main(), curly braces, std::cout, and return.
 //
 // REQUIREMENTS
 // 1. Create a program named (when you run it) that prints a short "about me"
@@ -29,5 +29,9 @@
 // - Run:    ./build/bin/ch_00_assignment
 //
 // =============================================================================
+#include <iostream>
 
-int main() { return 0; }
+int main() {
+  std::cout << "Hello deary" << std::endl;
+  return 0;
+}
