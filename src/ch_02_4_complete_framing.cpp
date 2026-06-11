@@ -1,7 +1,7 @@
+// 2-5 write a set of characters so they form a square, rectangle and triangle
 #include <iostream>
 #include <string>
 
-using std::cin;
 using std::cout;
 using std::endl;
 using std::string;
