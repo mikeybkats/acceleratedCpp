@@ -91,6 +91,16 @@
   },
   {
     "directory": "/Users/michaelbarakat/projects/acceleratedC++",
+    "command": "clang++ -std=c++17 -Wall -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -D_THREAD_SAFE -c src/ch_03_2-2_grades.cpp",
+    "file": "src/ch_03_2-2_grades.cpp"
+  },
+  {
+    "directory": "/Users/michaelbarakat/projects/acceleratedC++",
+    "command": "clang++ -std=c++17 -Wall -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -D_THREAD_SAFE -c src/ch_03_2_grades.cpp",
+    "file": "src/ch_03_2_grades.cpp"
+  },
+  {
+    "directory": "/Users/michaelbarakat/projects/acceleratedC++",
     "command": "clang++ -std=c++17 -Wall -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -D_THREAD_SAFE -c src/ch_03_assignment.cpp",
     "file": "src/ch_03_assignment.cpp"
   },

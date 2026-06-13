@@ -44,7 +44,7 @@ int main() {
   std::cin >> a >> b;
   std::string greater = " is greater than ";
   if (a > b) {
-    std::cout << a + greater + b;
+    std::cout << a << greater << b;
   } else {
     std::cout << b + greater + a;
   }

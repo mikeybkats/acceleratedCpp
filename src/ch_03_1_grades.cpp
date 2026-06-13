@@ -32,13 +32,16 @@ int main() {
 
   // invariant: we have read count grades so far and sum is the sum of the first
   // count grades
-  while (cin >> x) {
+  while (cin >> x) { // read a double from std::cin
+    // cin >> x becomes false when the read fails - anything that's not a number
+    // will kill the loop
     ++count;
     sum += x;
   }
 
   // write the result
-  streamsize prec = cout.precision();
+  // cout.precision - the total number of significant digits
+  streamsize prec = cout.precision(); // returns the current precision
   cout << "Your final grade is " << setprecision(3)
        << 0.2 * midterm + 0.4 * final + 0.4 * sum / count << setprecision(prec)
        << endl;
