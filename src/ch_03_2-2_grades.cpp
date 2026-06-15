@@ -1,5 +1,6 @@
 // 3.2.2 - storing the data in a vector
 
+#include <algorithm> // adds the sort function
 #include <iomanip>
 #include <ios>
 #include <iostream>
@@ -51,12 +52,29 @@ int main() {
     return 1;
   }
 
+  sort(homework.begin(), homework.end());
+  // begin() denotes the first element in the vector
+  // end() denotes one past the last element in the vector
+
+  vec_sz mid = size / 2;
+  double median;
+  median =
+      size % 2 == 0 ? (homework[mid] + homework[mid - 1]) / 2 : homework[mid];
+  // if the mid is even take the average of the two values in the middle of the
+  // vector if the mid is odd take the lower middle of the vector
+
   // write the result
   // cout.precision - the total number of significant digits
   streamsize prec = cout.precision(); // returns the current precision
-  cout << "Your final grade is " << setprecision(3)
-       << 0.2 * midterm + 0.4 * final + 0.4 * sum / size << setprecision(prec)
-       << endl;
+  cout << "Your final grade is "
+       << setprecision(3)
+       //    << 0.2 * midterm + 0.4 * final + 0.4 * sum / size <<
+       //    setprecision(prec)
+       << 0.2 * midterm + 0.4 * final +
+              0.4 * median // replaces average with the median. This will allow
+                           // us to ignore a students lowest marks so they don't
+                           // pull down the homework average
+       << setprecision(prec) << endl;
 
   return 0;
 }
