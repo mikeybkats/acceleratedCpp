@@ -29,7 +29,6 @@ int main() {
                                              // by whitespace are
           "followed by end-of-file: ";       // automatically concatenated
 
-  double sum = 0;
   double x; // without assigning a value, x gets the default initialization of
             // undefined (determined by type). It is illegal to do anything with
             // an uninitialized variable.
@@ -40,7 +39,6 @@ int main() {
   // invariant: we have read count grades so far and sum is the sum of the first
   while (cin >> x) {
     homework.push_back(x);
-    sum += x;
   }
 
   if (size == 0) {
