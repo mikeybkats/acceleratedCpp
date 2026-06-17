@@ -93,7 +93,7 @@ void threeOne() {
   unsigned size = values.size();
   vec_sz mid = size / 2;
   double median;
-  median = size % 2 ? (values[mid] + values[mid - 1]) / 2 : values[mid];
+  median = size % 2 == 0 ? (values[mid] + values[mid - 1]) / 2 : values[mid];
 
   // print the median
   cout << "median in values[]: " << median << endl;
