@@ -52,59 +52,79 @@ void three_two() {
   print_vector(full);
 
   int size = full.size();
-  int count = size - 1;
 
   int firstQuart = size - (size / 4); // 60
   int secondQuart = size / 2;         // 40
   int thirdQuart = size / 4;          // 20;
 
-  while (count >= 0) {
-    if (count > firstQuart && count <= size) {
-      // 79
-      if (count == size - 1) {
-        // cout << endl << "Count: " << count;
-        cout << endl;
-        cout << "first quarter: ";
-      }
-      cout << full[count] << ' ';
-      count--;
-      continue;
-    }
-    // 59
-    if (count >= secondQuart && count <= firstQuart) {
-      if (count == firstQuart - 1) {
-        // cout << endl << "Count: " << count;
-        cout << endl;
-        cout << "second quarter: ";
-      }
-      cout << full[count] << ' ';
-      count--;
-      continue;
-    }
+  cout << "first quarter: ";
+  for (int i = firstQuart; i != size; i++) {
+    cout << full[i] << ' ';
+  }
 
-    // 39
-    if (count >= thirdQuart && count <= secondQuart) {
-      if (count == secondQuart - 1) {
-        // cout << endl << "Count: " << count;
-        cout << endl;
-        cout << "third quarter: ";
-      }
-      cout << full[count] << ' ';
-      count--;
-      continue;
-    }
+  cout << endl << "second quarter: ";
+  for (int i = secondQuart; i != firstQuart; i++) {
+    cout << full[i] << ' ';
+  }
 
-    // 19
-    if (count >= 0 && count <= thirdQuart) {
-      if (count == thirdQuart - 1) {
-        cout << endl;
-        cout << "fourth quarter: ";
-      }
-      cout << full[count] << ' ';
-    }
+  cout << endl << "third quarter: ";
+  for (int i = thirdQuart; i != secondQuart; i++) {
+    cout << full[i] << ' ';
+  }
 
-    count--;
-  };
+  cout << endl << "fourth quarter: ";
+  for (int i = 0; i != thirdQuart; i++) {
+    cout << full[i] << ' ';
+  }
+
+  // this is a maze of continues (hard to understand and complex math)
+  //   while (count >= 0) {
+  //     if (count > firstQuart && count <= size) {
+  //       // 79
+  //       if (count == size - 1) {
+  //         // cout << endl << "Count: " << count;
+  //         cout << endl;
+  //         cout << "first quarter: ";
+  //       }
+  //       cout << full[count] << ' ';
+  //       count--;
+  //       continue;
+  //     }
+  //     // 59
+  //     if (count >= secondQuart && count <= firstQuart) {
+  //       if (count == firstQuart - 1) {
+  //         // cout << endl << "Count: " << count;
+  //         cout << endl;
+  //         cout << "second quarter: ";
+  //       }
+  //       cout << full[count] << ' ';
+  //       count--;
+  //       continue;
+  //     }
+
+  //     // 39
+  //     if (count >= thirdQuart && count <= secondQuart) {
+  //       if (count == secondQuart - 1) {
+  //         // cout << endl << "Count: " << count;
+  //         cout << endl;
+  //         cout << "third quarter: ";
+  //       }
+  //       cout << full[count] << ' ';
+  //       count--;
+  //       continue;
+  //     }
+
+  //     // 19
+  //     if (count >= 0 && count <= thirdQuart) {
+  //       if (count == thirdQuart - 1) {
+  //         cout << endl;
+  //         cout << "fourth quarter: ";
+  //       }
+  //       cout << full[count] << ' ';
+  //     }
+
+  //     count--;
+  //   };
 }
 
 int main() {
