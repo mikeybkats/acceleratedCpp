@@ -101,6 +101,11 @@
   },
   {
     "directory": "/Users/michaelbarakat/projects/acceleratedC++",
+    "command": "clang++ -std=c++17 -Wall -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -D_THREAD_SAFE -c src/ch_03_3_1.cpp",
+    "file": "src/ch_03_3_1.cpp"
+  },
+  {
+    "directory": "/Users/michaelbarakat/projects/acceleratedC++",
     "command": "clang++ -std=c++17 -Wall -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -D_THREAD_SAFE -c src/ch_03_assignment.cpp",
     "file": "src/ch_03_assignment.cpp"
   },
@@ -178,5 +183,10 @@
     "directory": "/Users/michaelbarakat/projects/acceleratedC++",
     "command": "clang++ -std=c++17 -Wall -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -D_THREAD_SAFE -c src/ch_16_assignment.cpp",
     "file": "src/ch_16_assignment.cpp"
+  },
+  {
+    "directory": "/Users/michaelbarakat/projects/acceleratedC++",
+    "command": "clang++ -std=c++17 -Wall -I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -D_THREAD_SAFE -c src/create_vector.cpp",
+    "file": "src/create_vector.cpp"
   }
 ]

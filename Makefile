@@ -8,8 +8,9 @@ OBJ_DIR=build
 BIN_DIR=$(OBJ_DIR)/bin
 
 ALL_CPP=$(wildcard $(SRC_DIR)/*.cpp)
-SRC_FILES=$(ALL_CPP)
-EXE_FILES=$(patsubst $(SRC_DIR)/%.cpp,$(BIN_DIR)/%,$(SRC_FILES))
+LIB_CPP=$(SRC_DIR)/create_vector.cpp
+MAIN_CPP=$(filter-out $(LIB_CPP),$(ALL_CPP))
+EXE_FILES=$(patsubst $(SRC_DIR)/%.cpp,$(BIN_DIR)/%,$(MAIN_CPP))
 
 # Ensure the output directories exist
 $(shell mkdir -p $(OBJ_DIR) $(BIN_DIR))
@@ -29,6 +30,9 @@ compile_commands.json: Makefile $(ALL_CPP)
 
 $(BIN_DIR)/%: $(SRC_DIR)/%.cpp
 	$(CXX) $(CXXFLAGS) -o $@ $< $(LDFLAGS)
+
+$(BIN_DIR)/ch_03_exercises: $(SRC_DIR)/ch_03_exercises.cpp $(SRC_DIR)/create_vector.cpp
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 
 clean:
 	rm -f $(BIN_DIR)/*

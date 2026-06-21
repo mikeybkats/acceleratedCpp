@@ -1,10 +1,6 @@
+#include "create_vector.h"
 #include <algorithm> // adds the sort function
-// #include <iomanip>
-// #include <ios>
 #include <iostream>
-// #include <string>
-#include <random>
-#include <string>
 #include <vector>
 
 using std::cout;
@@ -12,28 +8,6 @@ using std::endl;
 using std::find;
 using std::sort;
 using std::vector;
-typedef vector<unsigned>::size_type vec_sz;
-
-void fill_random(vector<unsigned> &values) {
-  std::random_device rd;
-  std::mt19937 gen(rd());
-
-  // create the "random" number of elements
-  std::uniform_int_distribution<unsigned> size_dist(
-      20, 50); // random size at least 20, up to 50
-  vec_sz count = size_dist(gen);
-
-  // create a value dist
-  std::uniform_int_distribution<unsigned> value_dist(50, 100);
-
-  values.clear();
-  values.reserve(count);
-
-  for (vec_sz i = 0; i != count; i++) {
-    // generate the random value and push it to the vector
-    values.push_back(value_dist(gen));
-  }
-}
 
 // 3-0 compile, execute and test the programs in this chapter
 
@@ -44,73 +18,96 @@ void fill_random(vector<unsigned> &values) {
 // discard a value, and then find values for the unread – and therefore unknown–
 // part of our collection that would cause the median to be the value we
 // discarded.
-void threeOne() {
-  // prove that we cannot afford to discard any values in the vector that have
-  // been read
-  vector<unsigned> values;
-  fill_random(values);
 
-  vector<unsigned> discardedSet;
-  int count = 0;
+// We want to find the median in a list of numbers. Suppose, we can discard a
+// value.
+//
+// - We read a few values and discard them [15, 25, 30, 36]
+// - We read more values until the list is gone (let's assume it's an odd number
+// of values) [10, 20, 21, 45, 35, 40, 41]
+// - We sort the list
+// - We identify the middle value in the list by dividing the length by two and
+// selecting the value at that index. The value is 35.
+// - The length of the remaining values does not include the length of the
+// discarded list, therefore the middle value - the median - is not the true
+// middle of the list and not the true median.
+// - When the lists are combined [10, 15, 20, 21, 25, 30, 35, 36, 40, 41, 45] we
+// see that the true middle value is 30 a value from the discarded list
 
-  // find values that would cause the median to be the value we discarded
-  std::random_device rd;
-  std::mt19937 gen(rd());
-  std::uniform_int_distribution<int> limit_dist(10, 20);
-  int randomLimit = limit_dist(gen); // between 5 and 10
+typedef vector<unsigned>::size_type vec_sz;
 
-  vector<unsigned> keptSet;
+int median(vector<unsigned> &values) {
+  int mid = values.size() / 2;
+  return values.size() % 2 == 0 ? (values[mid] + values[mid - 1]) / 2
+                                : values[mid / 2];
+}
 
-  while (count != values.size()) {
-    if (count <= randomLimit) {
-      if (count == 0) {
-        cout << "discarded set: ";
-      }
-      // read random number of values and push them to the set
-      discardedSet.push_back(values[count]);
-      cout << values[count] << " ";
+// 3-2 write a program to compute and print the quartiles (that is the quarter
+// of the numbers with the largest values, the next highest quarter, and so
+// on) of a set of integers
+void three_two() {
+  vector<unsigned> full;
+  fill_random_length(full, 80);
+  sort(full.begin(), full.end());
+  print_vector(full);
 
-      if (count == randomLimit) {
+  int size = full.size();
+  int count = size - 1;
+
+  int firstQuart = size - (size / 4); // 60
+  int secondQuart = size / 2;         // 40
+  int thirdQuart = size / 4;          // 20;
+
+  while (count >= 0) {
+    if (count > firstQuart && count <= size) {
+      // 79
+      if (count == size - 1) {
+        // cout << endl << "Count: " << count;
         cout << endl;
-        cout << "kept set: ";
+        cout << "first quarter: ";
       }
-
-      count++;
+      cout << full[count] << ' ';
+      count--;
+      continue;
+    }
+    // 59
+    if (count >= secondQuart && count <= firstQuart) {
+      if (count == firstQuart - 1) {
+        // cout << endl << "Count: " << count;
+        cout << endl;
+        cout << "second quarter: ";
+      }
+      cout << full[count] << ' ';
+      count--;
       continue;
     }
 
-    keptSet.push_back(values[count]);
-    cout << values[count] << " ";
+    // 39
+    if (count >= thirdQuart && count <= secondQuart) {
+      if (count == secondQuart - 1) {
+        // cout << endl << "Count: " << count;
+        cout << endl;
+        cout << "third quarter: ";
+      }
+      cout << full[count] << ' ';
+      count--;
+      continue;
+    }
 
-    count++;
-  }
-  cout << endl;
+    // 19
+    if (count >= 0 && count <= thirdQuart) {
+      if (count == thirdQuart - 1) {
+        cout << endl;
+        cout << "fourth quarter: ";
+      }
+      cout << full[count] << ' ';
+    }
 
-  sort(values.begin(), values.end());
-  sort(keptSet.begin(), keptSet.end());
-  sort(discardedSet.begin(), discardedSet.end());
-
-  unsigned size = values.size();
-  vec_sz mid = size / 2;
-  double median;
-  median = size % 2 == 0 ? (values[mid] + values[mid - 1]) / 2 : values[mid];
-
-  // print the median
-  cout << "median in values[]: " << median << endl;
-
-  // determine if it was in the kept set
-  auto it_discarded = find(discardedSet.begin(), discardedSet.end(), median);
-  std::string in_discarded = it_discarded[0] == median ? "true" : "false";
-  cout << "was median in discarded vector? " << in_discarded << endl;
-
-  // determine if it was in the kept set
-  auto it_kept = find(keptSet.begin(), keptSet.end(), median);
-  std::string in_kept = it_kept[0] == median ? "true" : "false";
-  cout << "was median in kept vector? " << in_kept << endl;
+    count--;
+  };
 }
 
 int main() {
-  threeOne();
-
+  three_two();
   return 0;
 }
