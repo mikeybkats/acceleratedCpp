@@ -127,6 +127,33 @@ void three_two() {
   //   };
 }
 
+void threeThree() {
+  // write a program to count how many times each distinct word appears in its
+  // input
+}
+
+void threeFour() {
+  // write a program to report the length of the longest and shortest string in
+  // its input
+}
+
+void threeFive() {
+  // write a program that will keep track of grades for several students at
+  // once. The program could keep two vectors in sync: the first should hold the
+  // students names and the second the final grades that can be computed as
+  // input is read. For now, you should assume a fixed number of homework
+  // grades.
+}
+
+void threeSix() {
+  // the average grade computation in chapter three might divide by zero if the
+  // student didn't enter any grades. Division by zero is undefined in c++ which
+  // means that the implementation is permitted to do anything it likes. what
+  // does your c++ implementation do in this case? Rewrite the program so that
+  // its behavior does not depend on how the implementation treats division by
+  // zero
+}
+
 int main() {
   three_two();
   return 0;
