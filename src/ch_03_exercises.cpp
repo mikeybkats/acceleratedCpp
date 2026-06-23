@@ -144,30 +144,46 @@ void three_three() {
       "lemons",   "watermelon", "peaches",     "bananas",      "apples",
       "pears",    "plums",      "apricots",    "strawberries", "oranges",
       "lemons",   "watermelon", "raspberries", "strawberries", "blackberries"};
+  sort(words.begin(), words.end());
 
   vector<string> distinctWords;
+  vector<int> counts;
 
   for (int i = 0; i < words.size(); i++) {
-    if (find(distinctWords.begin(), distinctWords.end(), words[i]) !=
-        distinctWords.end()) {
-      // word found
-      continue;
-    } else {
+    // scan distinct words to see if it contains the entry
+    int j = 0;
+    while (j != distinctWords.size() && distinctWords[j] != words[i]) {
+      j++;
+    }
+    // if distnctWords has been fully scanned then the word from "words" has not
+    // been found before
+    if (j == distinctWords.size()) {
+      // word is unique. push it
       distinctWords.push_back(words[i]);
+      // add a count
+      counts.push_back(1);
+    } else {
+      // increment the count in the vector
+      ++counts[j];
     }
   }
 
-  sort(distinctWords.begin(), distinctWords.end());
-
+  // sorting here will now break the solution
+  // sort(distinctWords.begin(), distinctWords.end());
   for (int i = 0; i < distinctWords.size(); i++) {
-    int wordCount = 0;
-    for (int j = 0; j < words.size(); j++) {
-      if (distinctWords[i] == words[j]) {
-        wordCount++;
-      }
-    }
-    cout << distinctWords[i] << ":" << wordCount << endl;
+    cout << distinctWords[i] << ": " << counts[i] << endl;
   }
+
+  //   // todo: drop this for loop and embed the logic in the upper for loop
+  //   for (int i = 0; i < distinctWords.size(); i++) {
+  //     int wordCount = 0;
+  //     for (int j = 0; j < words.size(); j++) {
+  //       if (distinctWords[i] == words[j]) {
+  //         wordCount++;
+  //       }
+  //     }
+  //     cout << distinctWords[i] << ":" << wordCount << endl;
+  //   }
 
   cout << program_break << endl;
 }
