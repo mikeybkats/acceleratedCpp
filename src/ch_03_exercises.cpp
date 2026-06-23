@@ -1,12 +1,15 @@
 #include "create_vector.h"
 #include <algorithm> // adds the sort function
 #include <iostream>
+#include <string>
 #include <vector>
 
+using std::cin;
 using std::cout;
 using std::endl;
 using std::find;
 using std::sort;
+using std::string;
 using std::vector;
 
 // 3-0 compile, execute and test the programs in this chapter
@@ -35,6 +38,8 @@ using std::vector;
 // see that the true middle value is 30 a value from the discarded list
 
 typedef vector<unsigned>::size_type vec_sz;
+
+string program_break = "==============================";
 
 int median(vector<unsigned> &values) {
   int mid = values.size() / 2;
@@ -76,6 +81,9 @@ void three_two() {
   for (int i = 0; i != thirdQuart; i++) {
     cout << full[i] << ' ';
   }
+  cout << endl;
+
+  cout << program_break << endl;
 
   // this is a maze of continues (hard to understand and complex math)
   //   while (count >= 0) {
@@ -127,17 +135,67 @@ void three_two() {
   //   };
 }
 
-void threeThree() {
+void three_three() {
   // write a program to count how many times each distinct word appears in its
   // input
+  vector<string> words = {
+      "apricots", "plums",      "peaches",     "oranges",      "strawberries",
+      "lemons",   "watermelon", "blueberries", "plums",        "peaches",
+      "lemons",   "watermelon", "peaches",     "bananas",      "apples",
+      "pears",    "plums",      "apricots",    "strawberries", "oranges",
+      "lemons",   "watermelon", "raspberries", "strawberries", "blackberries"};
+
+  vector<string> distinctWords;
+
+  for (int i = 0; i < words.size(); i++) {
+    if (find(distinctWords.begin(), distinctWords.end(), words[i]) !=
+        distinctWords.end()) {
+      // word found
+      continue;
+    } else {
+      distinctWords.push_back(words[i]);
+    }
+  }
+
+  sort(distinctWords.begin(), distinctWords.end());
+
+  for (int i = 0; i < distinctWords.size(); i++) {
+    int wordCount = 0;
+    for (int j = 0; j < words.size(); j++) {
+      if (distinctWords[i] == words[j]) {
+        wordCount++;
+      }
+    }
+    cout << distinctWords[i] << ":" << wordCount << endl;
+  }
+
+  cout << program_break << endl;
 }
 
-void threeFour() {
+void three_four() {
   // write a program to report the length of the longest and shortest string in
   // its input
+  vector<string> words = {"violin",       "cello", "flute",     "guitar",
+                          "oboe",         "bongo", "conga",     "synthesizer",
+                          "drum machine", "bass",  "xylophone", "piano"};
+
+  string longest = words[0];
+  string shortest = words[0];
+  for (int i = 0; i < words.size(); i++) {
+    if (words[i].size() > longest.size()) {
+      longest = words[i];
+    }
+    if (words[i].size() < shortest.size()) {
+      shortest = words[i];
+    }
+  }
+  cout << "longest string: " << longest.size() << endl;
+  cout << "shortest string: " << shortest.size() << endl;
+
+  cout << program_break << endl;
 }
 
-void threeFive() {
+void three_five() {
   // write a program that will keep track of grades for several students at
   // once. The program could keep two vectors in sync: the first should hold the
   // students names and the second the final grades that can be computed as
@@ -145,7 +203,7 @@ void threeFive() {
   // grades.
 }
 
-void threeSix() {
+void three_six() {
   // the average grade computation in chapter three might divide by zero if the
   // student didn't enter any grades. Division by zero is undefined in c++ which
   // means that the implementation is permitted to do anything it likes. what
@@ -156,5 +214,7 @@ void threeSix() {
 
 int main() {
   three_two();
+  three_three();
+  three_four();
   return 0;
 }
