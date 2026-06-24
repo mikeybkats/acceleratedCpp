@@ -217,6 +217,38 @@ void three_five() {
   // students names and the second the final grades that can be computed as
   // input is read. For now, you should assume a fixed number of homework
   // grades.
+  vector<string> students;
+  vector<int> grades;
+
+  cout << "Enter grades. Program ends when student name equals 'end_student'"
+       << endl;
+  string student;
+  while (student != "end_student") {
+    cout << "enter student name:";
+    cin >> student;
+    if (student == "end_student") {
+      continue;
+    }
+
+    students.push_back(student);
+
+    int grade;
+    int sum = 0;
+    int count = 0;
+    while (count != 5) {
+      cout << "Enter the student's homework grades (" << 5 - count << "):";
+      cin >> grade;
+      sum += grade;
+      count++;
+    }
+
+    grades.push_back(sum / count);
+  }
+
+  cout << "Student Grades" << endl;
+  for (int i = 0; i < students.size(); i++) {
+    cout << students[i] << ": " << grades[i] << endl;
+  }
 }
 
 void three_six() {
@@ -229,8 +261,9 @@ void three_six() {
 }
 
 int main() {
-  three_two();
-  three_three();
-  three_four();
+  //   three_two();
+  //   three_three();
+  //   three_four();
+  three_five();
   return 0;
 }
