@@ -1,5 +1,7 @@
 #include "create_vector.h"
 #include <algorithm> // adds the sort function
+#include <cstddef>
+#include <iomanip>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -8,7 +10,9 @@ using std::cin;
 using std::cout;
 using std::endl;
 using std::find;
+using std::setprecision;
 using std::sort;
+using std::streamsize;
 using std::string;
 using std::vector;
 
@@ -251,6 +255,33 @@ void three_five() {
   }
 }
 
+void enter_grades(vector<double> *homework, double *sum, double *x) {
+  cout << "Enter all your homework grades, "
+          "followed by end-of-file: "
+       << endl;
+
+  while (cin >> *x) {
+    homework->push_back(*x);
+    *sum += *x;
+  }
+
+  if (homework->size() == 0) {
+    cout << "You must enter grades. Try harder." << endl;
+    cin.clear();
+    enter_grades(homework, sum, x);
+  }
+}
+
+void enter_midterm(double *midterm, double *final) {
+  cout << "Please enter your midterm and final exam grades: ";
+
+  while (!(cin >> *midterm >> *final)) {
+    cout << "Not a number. Try again.";
+    cin.clear();
+    cin.ignore(1000, '\n');
+  }
+}
+
 void three_six() {
   // the average grade computation in chapter three might divide by zero if the
   // student didn't enter any grades. Division by zero is undefined in c++ which
@@ -258,12 +289,31 @@ void three_six() {
   // does your c++ implementation do in this case? Rewrite the program so that
   // its behavior does not depend on how the implementation treats division by
   // zero
+  cout << "Please enter your first name: ";
+  string name;
+  cin >> name;
+  cout << "Hello, " << name << "!" << endl;
+
+  double midterm, final;
+  enter_midterm(&midterm, &final);
+
+  double sum = 0;
+  vector<double> homework = {};
+  double x = 0;
+
+  enter_grades(&homework, &sum, &x);
+
+  streamsize prec = cout.precision(); // returns the current precision
+  cout << "Your final grade is " << setprecision(3)
+       << 0.2 * midterm + 0.4 * final + 0.4 * sum / homework.size()
+       << setprecision(prec) << endl;
 }
 
 int main() {
   //   three_two();
   //   three_three();
   //   three_four();
-  three_five();
+  //   three_five();
+  three_six();
   return 0;
 }
